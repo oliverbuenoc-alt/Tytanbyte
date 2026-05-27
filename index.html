@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>TitanByte | Top Ventas</title>
+<title>VELORA | Top Ventas y Tendencias</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -35,42 +35,41 @@ overflow-x:hidden;
 
 .layout{
 display:flex;
-min-height:100vh;
 }
 
 .sidebar{
 width:260px;
-background:#0b0f15;
-padding:25px;
+height:100vh;
 position:sticky;
 top:0;
-height:100vh;
+padding:25px;
+background:#0b0f15;
 border-right:1px solid #1f2937;
 overflow:auto;
 }
 
 .sidebar-title{
-font-size:32px;
+font-size:34px;
 font-weight:900;
 color:#8b5cf6;
+text-shadow:0 0 20px rgba(139,92,246,.4);
 margin-bottom:30px;
 }
 
 .menu{
 display:block;
 padding:14px;
-margin-bottom:10px;
 background:#111827;
+margin-bottom:10px;
 border-radius:14px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 transition:.3s;
 }
 
 .menu:hover{
 background:#8b5cf6;
-transform:translateX(8px);
-box-shadow:0 0 25px rgba(139,92,246,.4);
+transform:translateX(6px);
 }
 
 .content{
@@ -80,19 +79,18 @@ flex:1;
 header{
 position:sticky;
 top:0;
-z-index:999;
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:20px;
 padding:18px 30px;
-background:rgba(0,0,0,.85);
+background:rgba(0,0,0,.8);
 backdrop-filter:blur(20px);
-border-bottom:1px solid #1f2937;
+z-index:999;
+gap:20px;
 }
 
 .logo{
-font-size:32px;
+font-size:34px;
 font-weight:900;
 color:#8b5cf6;
 }
@@ -110,18 +108,20 @@ color:white;
 .cart{
 background:#8b5cf6;
 padding:12px 20px;
-border-radius:14px;
-font-weight:900;
+border-radius:12px;
+cursor:pointer;
+font-weight:800;
 }
 
 .hero{
+
 padding:100px 8%;
 text-align:center;
 
 background:
 linear-gradient(
 180deg,
-rgba(139,92,246,.18),
+rgba(139,92,246,.15),
 transparent
 );
 
@@ -130,53 +130,12 @@ transparent
 .hero h1{
 font-size:68px;
 font-weight:900;
-margin-bottom:20px;
-line-height:1;
-}
-
-.purple{
-color:#8b5cf6;
 }
 
 .hero p{
-font-size:22px;
+margin-top:20px;
 opacity:.8;
-margin-bottom:40px;
-}
-
-.stats{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.stat{
-padding:16px 24px;
-background:#111827;
-border-radius:18px;
-}
-
-.cta{
-padding:18px 40px;
-background:#8b5cf6;
-border:none;
-border-radius:18px;
-font-size:20px;
-font-weight:900;
-color:white;
-cursor:pointer;
-margin-top:40px;
-}
-
-.section{
-padding:70px 8%;
-}
-
-.title{
-font-size:36px;
-font-weight:900;
-margin-bottom:30px;
+font-size:22px;
 }
 
 .grid{
@@ -186,59 +145,65 @@ repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
+.section{
+padding:70px 8%;
+}
+
+.title{
+font-size:38px;
+font-weight:900;
+margin-bottom:30px;
+}
+
 .card{
+
 background:#111827;
-border-radius:25px;
+
+border-radius:24px;
+
 overflow:hidden;
+
 transition:.35s;
-border:1px solid rgba(255,255,255,.05);
+
 }
 
 .card:hover{
+
 transform:translateY(-8px);
-border-color:#8b5cf6;
+
 box-shadow:
-0 20px 40px rgba(139,92,246,.25);
+0 20px 40px rgba(139,92,246,.2);
+
 }
 
 .card img{
+
 width:100%;
 height:220px;
 object-fit:cover;
+
 }
 
 .info{
 padding:18px;
 }
 
-.cat{
-color:#8b5cf6;
-font-size:13px;
-}
-
 .price{
 font-size:28px;
 font-weight:900;
-margin:12px 0;
 color:#8b5cf6;
+margin:12px 0;
 }
 
 .btn{
+
 width:100%;
 padding:12px;
+background:#8b5cf6;
 border:none;
 border-radius:12px;
-background:#8b5cf6;
-font-weight:800;
 color:white;
-cursor:pointer;
-}
-
-@media(max-width:900px){
-
-.sidebar{
-display:none;
-}
+font-weight:800;
 
 }
 
@@ -252,38 +217,18 @@ display:none;
 <aside class="sidebar">
 
 <div class="sidebar-title">
-TITANBYTE
-</div>
 
-<a class="menu" href="#inicio">🏠 Inicio</a>
-
-<a class="menu" href="#flash">⚡ Ofertas Flash</a>
-
-<a class="menu" href="#viral">📈 TikTok Viral</a>
-
-<a class="menu" href="#tecnologia">📱 Tecnología</a>
-
-<a class="menu" href="#hogar">🏠 Hogar</a>
-
-<a class="menu" href="#gaming">🎮 Gaming</a>
-
-<a class="menu" href="#fitness">💪 Fitness</a>
-
-<a class="menu" href="#catalogo">🛍 Catálogo</a>
-
-<div style="margin-top:30px;background:#111827;padding:18px;border-radius:16px">
-
-⭐ +50.000 clientes
-
-<br><br>
-
-🔥 Productos virales
-
-<br><br>
-
-🚚 Envíos rápidos
+VELORA
 
 </div>
+
+<a href="#inicio" class="menu">🏠 Inicio</a>
+
+<a href="#flash" class="menu">⚡ Flash</a>
+
+<a href="#viral" class="menu">📈 TikTok</a>
+
+<a href="#catalogo" class="menu">🛍 Catálogo</a>
 
 </aside>
 
@@ -292,7 +237,9 @@ TITANBYTE
 <header>
 
 <div class="logo">
-TITANBYTE
+
+VELORA
+
 </div>
 
 <input
@@ -301,66 +248,30 @@ class="search"
 placeholder="Buscar productos...">
 
 <div class="cart">
+
 🛒 <span id="count">0</span>
+
 </div>
 
 </header>
 
-<section
-id="inicio"
-class="hero">
+<section id="inicio" class="hero">
 
 <h1>
 
-🔥 Productos
-
-<span class="purple">
-
-Virales
-
-</span>
-
-Top Ventas
+🔥 Productos virales
+y top ventas
 
 </h1>
 
 <p>
 
-Ofertas, tendencias y productos que están arrasando
+Miles de personas compran estas tendencias cada día
 
 </p>
 
-<div class="stats">
-
-<div class="stat">
-⭐ +50.000 clientes
-</div>
-
-<div class="stat">
-🚚 Envíos rápidos
-</div>
-
-<div class="stat">
-⚡ Ofertas Flash
-</div>
-
-<div class="stat">
-🔒 Compra segura
-</div>
-
-</div>
-
-<button class="cta">
-
-Ver ofertas
-
-</button>
-
 </section>
-
-<section
-id="flash"
-class="section">
+<section id="flash" class="section">
 
 <div class="title">
 ⚡ Ofertas Flash
@@ -369,6 +280,8 @@ class="section">
 <div id="flashGrid" class="grid"></div>
 
 </section>
+
+
 <section id="viral" class="section">
 
 <div class="title">
@@ -379,95 +292,210 @@ class="section">
 
 </section>
 
+
 <section id="catalogo" class="section">
 
 <div class="title">
-🛍 Catálogo
+🛍 Catálogo completo
 </div>
 
 <div id="grid" class="grid"></div>
 
 </section>
 
-<div id="paypal-button-container"
-style="padding:40px"></div>
 
+<div id="panelCarrito"
+
+style="
+position:fixed;
+top:0;
+right:-420px;
+width:420px;
+height:100%;
+background:#0b0f15;
+padding:25px;
+transition:.4s;
+z-index:99999;
+border-left:1px solid #1f2937">
+
+<h2 style="
+font-size:30px;
+color:#8b5cf6">
+
+🛒 Tu carrito
+
+</h2>
+
+<div id="items"
+
+style="
+margin-top:20px;
+max-height:50vh;
+overflow:auto">
+
+</div>
+
+<h3 style="
+margin-top:25px">
+
+Total:
+
+<span id="totalText">
+
+0€
+
+</span>
+
+</h3>
+
+<div
+id="paypal-button-container"
+style="margin-top:20px"></div>
+
+<button
+onclick="cerrarCarrito()"
+class="btn"
+style="margin-top:20px">
+
+Cerrar
+
+</button>
+
+</div>
 <script>
 
-let carrito=0
-let total=19.99
+let carrito=[]
 
-const base=[
+let total=0
 
-["Apple Watch Series 10","Tecnología","https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=900"],
 
-["DJI Mini Pro","Drones","https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=900"],
+const productos=[
 
-["Magcubic HY300 Mini Proyector","TikTok","https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=900"],
+{
+n:"Apple Watch Series 10",
+c:"Tecnología",
+img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=900",
+precio:499,
+tipo:"viral"
+},
 
-["Dyson V15 Detect","Hogar","https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=900"],
+{
+n:"DJI Mini Pro",
+c:"Drones",
+img:"https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=900",
+precio:799,
+tipo:"flash"
+},
 
-["JBL Tune 770BT","Audio","https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900"],
+{
+n:"Dyson V15 Detect",
+c:"Hogar",
+img:"https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=900",
+precio:649,
+tipo:"normal"
+},
 
-["Nintendo Switch OLED","Gaming","https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=900"],
+{
+n:"Nintendo Switch OLED",
+c:"Gaming",
+img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=900",
+precio:329,
+tipo:"viral"
+},
 
-["GoPro HERO","Viaje","https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=900"]
+{
+n:"JBL Tune 770BT",
+c:"Audio",
+img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900",
+precio:89,
+tipo:"normal"
+},
 
-]
+{
+n:"GoPro HERO",
+c:"Viaje",
+img:"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=900",
+precio:449,
+tipo:"flash"
+},
 
-const productos=[]
+{
+n:"Kindle Paperwhite",
+c:"Tecnología",
+img:"https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=900",
+precio:169,
+tipo:"normal"
+},
 
-for(let i=0;i<500;i++){
+{
+n:"Magcubic HY300 Mini Proyector",
+c:"TikTok",
+img:"https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=900",
+precio:79,
+tipo:"viral"
+},
 
-let p=base[i%base.length]
+{
+n:"Stanley Quencher",
+c:"TikTok",
+img:"https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=900",
+precio:45,
+tipo:"normal"
+},
 
-productos.push({
-
-n:p[0],
-c:p[1],
-img:p[2],
-
-precio:
-Math.floor(Math.random()*300)+49,
-
-tipo:
-i%15===0
-?"flash":
-i%10===0
-?"viral":
-"normal"
-
-})
-
+{
+n:"Logitech MX Master 3S",
+c:"Oficina",
+img:"https://images.unsplash.com/photo-1527814050087-3793815479db?q=80&w=900",
+precio:109,
+tipo:"normal"
 }
 
-function card(p){
+]
+  function card(p){
 
-return`
+return `
 
 <div class="card">
 
 <img
 loading="lazy"
-src="${p.img}">
+src="${p.img}"
+alt="${p.n}">
 
 <div class="info">
 
-<div class="cat">
+<div style="
+color:#8b5cf6;
+font-size:13px;
+margin-bottom:8px">
+
 ${p.c}
+
 </div>
 
-<h3>${p.n}</h3>
+<h3 style="
+font-size:18px;
+min-height:55px">
+
+${p.n}
+
+</h3>
 
 <div class="price">
+
 ${p.precio}€
+
 </div>
 
 <button
 class="btn"
-onclick="comprar(${p.precio})">
+onclick='comprar(${JSON.stringify({
+n:"${p.n}",
+precio:p.precio
+}).replace(/"/g,"&quot;")})'>
 
-Añadir
+Añadir al carrito
 
 </button>
 
@@ -479,46 +507,160 @@ Añadir
 
 }
 
+
 function render(lista){
-document.getElementById("grid")
+
+document
+.getElementById("grid")
 .innerHTML=
-lista.map(card).join("")
+
+lista
+.map(card)
+.join("")
+
 }
+
 
 render(productos)
 
-flashGrid.innerHTML=
-productos.filter(x=>x.tipo==="flash")
-.slice(0,8)
+
+document
+.getElementById("flashGrid")
+.innerHTML=
+
+productos
+
+.filter(
+x=>x.tipo==="flash"
+)
+
 .map(card)
+
 .join("")
 
-viralGrid.innerHTML=
-productos.filter(x=>x.tipo==="viral")
-.slice(0,8)
+
+document
+.getElementById("viralGrid")
+.innerHTML=
+
+productos
+
+.filter(
+x=>x.tipo==="viral"
+)
+
 .map(card)
+
 .join("")
 
-function comprar(precio){
 
-carrito++
+function comprar(p){
 
-total+=precio
+carrito.push(p)
 
-count.innerText=carrito
+total+=p.precio
+
+
+document
+.getElementById("count")
+.innerText=
+
+carrito.length
+
+
+document
+.getElementById("items")
+.innerHTML+=`
+
+<div style="
+padding:10px;
+border-bottom:
+1px solid #1f2937">
+
+${p.n}
+
+-
+
+${p.precio}€
+
+</div>
+
+`
+
+
+document
+.getElementById("totalText")
+.innerText=
+
+total.toFixed(2)+"€"
+
+
+document
+.getElementById("panelCarrito")
+.style.right="0"
 
 }
 
-search.oninput=e=>{
 
-let t=e.target.value.toLowerCase()
+document
+.querySelector(".cart")
+.onclick=function(){
 
-render(
-productos.filter(
-x=>x.n.toLowerCase().includes(t)
-))
+document
+.getElementById("panelCarrito")
+.style.right="0"
 
 }
+
+
+function cerrarCarrito(){
+
+document
+.getElementById("panelCarrito")
+.style.right="-420px"
+
+}
+
+
+document
+.getElementById("search")
+.addEventListener(
+
+"input",
+
+function(e){
+
+let texto=
+
+e.target
+.value
+.toLowerCase()
+.trim()
+
+
+let filtrados=
+
+productos.filter(p=>
+
+p.n
+.toLowerCase()
+.includes(texto)
+
+||
+
+p.c
+.toLowerCase()
+.includes(texto)
+
+)
+
+
+render(filtrados)
+
+}
+
+)
+
 
 paypal.Buttons({
 
@@ -530,7 +672,8 @@ purchase_units:[{
 
 amount:{
 
-value:total.toFixed(2)
+value:
+total.toFixed(2)
 
 }
 
@@ -542,21 +685,31 @@ value:total.toFixed(2)
 
 onApprove:function(data,actions){
 
-return actions.order.capture()
+return actions
+.order
+.capture()
 .then(function(details){
 
 alert(
-'Pago completado por '
+
+"Pago completado por "
+
 +
-details.payer.name.given_name
+
+details.payer
+.name
+.given_name
+
 )
 
 })
 
 }
 
-}).render(
-'#paypal-button-container'
+})
+
+.render(
+"#paypal-button-container"
 )
 
 </script>
