@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>TitanByte Deals | Top Ventas</title>
+<title>TitanByte | Top Ventas</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script src="https://www.paypal.com/sdk/js?client-id=AQ0-loNUSHmKJ0yAqvJaGxQj8bvMpKc4_cAzd2rLPURK0VPhIpvp-fsAU5xAOawA9zYKEJmdOukeikNi&currency=EUR"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
@@ -24,11 +22,59 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Inter,sans-serif;
 background:#05070b;
 color:white;
 overflow-x:hidden;
+}
+
+.layout{
+display:flex;
+min-height:100vh;
+}
+
+.sidebar{
+width:260px;
+background:#0b0f15;
+padding:25px;
+position:sticky;
+top:0;
+height:100vh;
+border-right:1px solid #1f2937;
+overflow:auto;
+}
+
+.sidebar-title{
+font-size:32px;
+font-weight:900;
+color:#8b5cf6;
+margin-bottom:30px;
+}
+
+.menu{
+display:block;
+padding:14px;
+margin-bottom:10px;
+background:#111827;
+border-radius:14px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.menu:hover{
+background:#8b5cf6;
+transform:translateX(8px);
+box-shadow:0 0 25px rgba(139,92,246,.4);
+}
+
+.content{
+flex:1;
 }
 
 header{
@@ -38,17 +84,17 @@ z-index:999;
 display:flex;
 justify-content:space-between;
 align-items:center;
+gap:20px;
 padding:18px 30px;
 background:rgba(0,0,0,.85);
 backdrop-filter:blur(20px);
 border-bottom:1px solid #1f2937;
-gap:20px;
 }
 
 .logo{
-font-size:34px;
+font-size:32px;
 font-weight:900;
-color:#ff6a00;
+color:#8b5cf6;
 }
 
 .search{
@@ -62,32 +108,34 @@ color:white;
 }
 
 .cart{
-background:#ff6a00;
+background:#8b5cf6;
 padding:12px 20px;
 border-radius:14px;
-font-weight:800;
+font-weight:900;
 }
 
 .hero{
 padding:100px 8%;
 text-align:center;
+
 background:
 linear-gradient(
 180deg,
-rgba(255,106,0,.15),
+rgba(139,92,246,.18),
 transparent
 );
+
 }
 
 .hero h1{
 font-size:68px;
 font-weight:900;
-line-height:1;
 margin-bottom:20px;
+line-height:1;
 }
 
-.orange{
-color:#ff6a00;
+.purple{
+color:#8b5cf6;
 }
 
 .hero p{
@@ -104,20 +152,21 @@ flex-wrap:wrap;
 }
 
 .stat{
-padding:16px 25px;
+padding:16px 24px;
 background:#111827;
 border-radius:18px;
 }
 
 .cta{
-margin-top:40px;
-padding:18px 45px;
-background:#ff6a00;
+padding:18px 40px;
+background:#8b5cf6;
 border:none;
 border-radius:18px;
 font-size:20px;
-font-weight:800;
+font-weight:900;
+color:white;
 cursor:pointer;
+margin-top:40px;
 }
 
 .section{
@@ -125,7 +174,7 @@ padding:70px 8%;
 }
 
 .title{
-font-size:38px;
+font-size:36px;
 font-weight:900;
 margin-bottom:30px;
 }
@@ -133,13 +182,13 @@ margin-bottom:30px;
 .grid{
 display:grid;
 grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
+repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
 .card{
 background:#111827;
-border-radius:26px;
+border-radius:25px;
 overflow:hidden;
 transition:.35s;
 border:1px solid rgba(255,255,255,.05);
@@ -147,7 +196,9 @@ border:1px solid rgba(255,255,255,.05);
 
 .card:hover{
 transform:translateY(-8px);
-border-color:#ff6a00;
+border-color:#8b5cf6;
+box-shadow:
+0 20px 40px rgba(139,92,246,.25);
 }
 
 .card img{
@@ -161,7 +212,7 @@ padding:18px;
 }
 
 .cat{
-color:#ff6a00;
+color:#8b5cf6;
 font-size:13px;
 }
 
@@ -169,7 +220,7 @@ font-size:13px;
 font-size:28px;
 font-weight:900;
 margin:12px 0;
-color:#ff6a00;
+color:#8b5cf6;
 }
 
 .btn{
@@ -177,29 +228,66 @@ width:100%;
 padding:12px;
 border:none;
 border-radius:12px;
-background:#ff6a00;
+background:#8b5cf6;
 font-weight:800;
 color:white;
 cursor:pointer;
 }
 
-#paypal-button-container{
-max-width:600px;
-margin:auto;
-padding:40px;
+@media(max-width:900px){
+
+.sidebar{
+display:none;
 }
 
-footer{
-padding:50px;
-text-align:center;
-opacity:.6;
 }
 
 </style>
-
 </head>
 
 <body>
+
+<div class="layout">
+
+<aside class="sidebar">
+
+<div class="sidebar-title">
+TITANBYTE
+</div>
+
+<a class="menu" href="#inicio">🏠 Inicio</a>
+
+<a class="menu" href="#flash">⚡ Ofertas Flash</a>
+
+<a class="menu" href="#viral">📈 TikTok Viral</a>
+
+<a class="menu" href="#tecnologia">📱 Tecnología</a>
+
+<a class="menu" href="#hogar">🏠 Hogar</a>
+
+<a class="menu" href="#gaming">🎮 Gaming</a>
+
+<a class="menu" href="#fitness">💪 Fitness</a>
+
+<a class="menu" href="#catalogo">🛍 Catálogo</a>
+
+<div style="margin-top:30px;background:#111827;padding:18px;border-radius:16px">
+
+⭐ +50.000 clientes
+
+<br><br>
+
+🔥 Productos virales
+
+<br><br>
+
+🚚 Envíos rápidos
+
+</div>
+
+</aside>
+
+<div class="content">
 
 <header>
 
@@ -208,9 +296,9 @@ TITANBYTE
 </div>
 
 <input
-class="search"
 id="search"
-placeholder="Buscar top ventas...">
+class="search"
+placeholder="Buscar productos...">
 
 <div class="cart">
 🛒 <span id="count">0</span>
@@ -218,22 +306,27 @@ placeholder="Buscar top ventas...">
 
 </header>
 
-<section class="hero">
+<section
+id="inicio"
+class="hero">
 
 <h1>
 
 🔥 Productos
-<span class="orange">
+
+<span class="purple">
+
 Virales
+
 </span>
 
-y Top Ventas
+Top Ventas
 
 </h1>
 
 <p>
 
-Miles de compradores encuentran ofertas cada día
+Ofertas, tendencias y productos que están arrasando
 
 </p>
 
@@ -258,32 +351,35 @@ Miles de compradores encuentran ofertas cada día
 </div>
 
 <button class="cta">
+
 Ver ofertas
+
 </button>
 
 </section>
 
-<section class="section">
+<section
+id="flash"
+class="section">
 
 <div class="title">
 ⚡ Ofertas Flash
 </div>
 
-<div id="flash" class="grid"></div>
+<div id="flashGrid" class="grid"></div>
 
 </section>
-
-<section class="section">
+<section id="viral" class="section">
 
 <div class="title">
 📈 Tendencias TikTok
 </div>
 
-<div id="viral" class="grid"></div>
+<div id="viralGrid" class="grid"></div>
 
 </section>
 
-<section class="section">
+<section id="catalogo" class="section">
 
 <div class="title">
 🛍 Catálogo
@@ -293,11 +389,9 @@ Ver ofertas
 
 </section>
 
-<div id="paypal-button-container"></div>
+<div id="paypal-button-container"
+style="padding:40px"></div>
 
-<footer>
-TitanByte Deals ©2026
-</footer>
 <script>
 
 let carrito=0
@@ -305,40 +399,36 @@ let total=19.99
 
 const base=[
 
-["Air Fryer","Cocina","https://images.unsplash.com/photo-1585515656973-c7b1f2e6e4f5?q=80&w=900"],
+["Apple Watch Series 10","Tecnología","https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=900"],
 
-["Robot Aspirador","Hogar","https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=900"],
+["DJI Mini Pro","Drones","https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=900"],
 
-["Mini Proyector","TikTok","https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=900"],
+["Magcubic HY300 Mini Proyector","TikTok","https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=900"],
 
-["Power Bank","Tecnología","https://images.unsplash.com/photo-1609592806596-b43fef0971d4?q=80&w=900"],
+["Dyson V15 Detect","Hogar","https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=900"],
 
-["Auriculares Bluetooth","Tecnología","https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900"],
+["JBL Tune 770BT","Audio","https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900"],
 
-["Smartwatch","Tecnología","https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=900"],
+["Nintendo Switch OLED","Gaming","https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=900"],
 
-["Tablet","Tecnología","https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=900"],
-
-["Silla Oficina","Hogar","https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=900"]
+["GoPro HERO","Viaje","https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=900"]
 
 ]
 
 const productos=[]
 
-for(let i=1;i<=500;i++){
+for(let i=0;i<500;i++){
 
 let p=base[i%base.length]
 
 productos.push({
 
-n:p[0]+" "+i,
-
+n:p[0],
 c:p[1],
-
 img:p[2],
 
 precio:
-(Math.floor(Math.random()*250)+20),
+Math.floor(Math.random()*300)+49,
 
 tipo:
 i%15===0
@@ -353,11 +443,13 @@ i%10===0
 
 function card(p){
 
-return `
+return`
 
 <div class="card">
 
-<img loading="lazy" src="${p.img}">
+<img
+loading="lazy"
+src="${p.img}">
 
 <div class="info">
 
@@ -388,20 +480,24 @@ Añadir
 }
 
 function render(lista){
-
-grid.innerHTML=
+document.getElementById("grid")
+.innerHTML=
 lista.map(card).join("")
-
 }
 
 render(productos)
 
-flash.innerHTML=
-productos.filter(x=>x.tipo==="flash").slice(0,8).map(card).join("")
+flashGrid.innerHTML=
+productos.filter(x=>x.tipo==="flash")
+.slice(0,8)
+.map(card)
+.join("")
 
-viral.innerHTML=
-productos.filter(x=>x.tipo==="viral").slice(0,8).map(card).join("")
-
+viralGrid.innerHTML=
+productos.filter(x=>x.tipo==="viral")
+.slice(0,8)
+.map(card)
+.join("")
 
 function comprar(precio){
 
@@ -464,6 +560,9 @@ details.payer.name.given_name
 )
 
 </script>
+
+</div>
+</div>
 
 </body>
 </html>
