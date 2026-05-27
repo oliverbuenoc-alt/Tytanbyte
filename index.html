@@ -1,721 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>VELORA | Top Ventas y Tendencias</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<script src="https://www.paypal.com/sdk/js?client-id=AQ0-loNUSHmKJ0yAqvJaGxQj8bvMpKc4_cAzd2rLPURK0VPhIpvp-fsAU5xAOawA9zYKEJmdOukeikNi&currency=EUR"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Inter,sans-serif;
-background:#05070b;
-color:white;
-overflow-x:hidden;
-}
-
-.layout{
-display:flex;
-}
-
-.sidebar{
-width:260px;
-height:100vh;
-position:sticky;
-top:0;
-padding:25px;
-background:#0b0f15;
-border-right:1px solid #1f2937;
-overflow:auto;
-}
-
-.sidebar-title{
-font-size:34px;
-font-weight:900;
-color:#8b5cf6;
-text-shadow:0 0 20px rgba(139,92,246,.4);
-margin-bottom:30px;
-}
-
-.menu{
-display:block;
-padding:14px;
-background:#111827;
-margin-bottom:10px;
-border-radius:14px;
-color:white;
-text-decoration:none;
-transition:.3s;
-}
-
-.menu:hover{
-background:#8b5cf6;
-transform:translateX(6px);
-}
-
-.content{
-flex:1;
-}
-
-header{
-position:sticky;
-top:0;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 30px;
-background:rgba(0,0,0,.8);
-backdrop-filter:blur(20px);
-z-index:999;
-gap:20px;
-}
-
-.logo{
-font-size:34px;
-font-weight:900;
-color:#8b5cf6;
-}
-
-.search{
-width:500px;
-max-width:100%;
-padding:14px;
-border:none;
-border-radius:14px;
-background:#111827;
-color:white;
-}
-
-.cart{
-background:#8b5cf6;
-padding:12px 20px;
-border-radius:12px;
-cursor:pointer;
-font-weight:800;
-}
-
-.hero{
-
-padding:100px 8%;
-text-align:center;
-
-background:
-linear-gradient(
-180deg,
-rgba(139,92,246,.15),
-transparent
-);
-
-}
-
-.hero h1{
-font-size:68px;
-font-weight:900;
-}
-
-.hero p{
-margin-top:20px;
-opacity:.8;
-font-size:22px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.section{
-padding:70px 8%;
-}
-
-.title{
-font-size:38px;
-font-weight:900;
-margin-bottom:30px;
-}
-
-.card{
-
-background:#111827;
-
-border-radius:24px;
-
-overflow:hidden;
-
-transition:.35s;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:
-0 20px 40px rgba(139,92,246,.2);
-
-}
-
-.card img{
-
-width:100%;
-height:220px;
-object-fit:cover;
-
-}
-
-.info{
-padding:18px;
-}
-
-.price{
-font-size:28px;
-font-weight:900;
-color:#8b5cf6;
-margin:12px 0;
-}
-
-.btn{
-
-width:100%;
-padding:12px;
-background:#8b5cf6;
-border:none;
-border-radius:12px;
-color:white;
-font-weight:800;
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <title>TITANBYTE | Hardware de Alto Rendimiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --primary: #8b5cf6; --bg: #05070b; --card: #111827; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: white; margin: 0; overflow-x: hidden; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; padding: 20px; }
+        .card { background: var(--card); border: 1px solid #1f2937; border-radius: 16px; padding: 15px; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .btn { background: var(--primary); padding: 10px; border-radius: 8px; width: 100%; font-weight: 700; cursor: pointer; border: none; transition: 0.3s; }
+        .btn:disabled { background: #374151; cursor: not-allowed; }
+        #panelCarrito { position: fixed; top: 0; right: -450px; width: 400px; height: 100%; background: #0b0f15; padding: 25px; transition: 0.4s; z-index: 9999; border-left: 1px solid #1f2937; overflow-y: auto; }
+        header { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(5,7,11,0.9); backdrop-filter: blur(10px); position: sticky; top:0; z-index: 50; }
+    </style>
 </head>
-
 <body>
-
-<div class="layout">
-
-<aside class="sidebar">
-
-<div class="sidebar-title">
-
-VELORA
-
-</div>
-
-<a href="#inicio" class="menu">🏠 Inicio</a>
-
-<a href="#flash" class="menu">⚡ Flash</a>
-
-<a href="#viral" class="menu">📈 TikTok</a>
-
-<a href="#catalogo" class="menu">🛍 Catálogo</a>
-
-</aside>
-
-<div class="content">
-
-<header>
-
-<div class="logo">
-
-VELORA
-
-</div>
-
-<input
-id="search"
-class="search"
-placeholder="Buscar productos...">
-
-<div class="cart">
-
-🛒 <span id="count">0</span>
-
-</div>
-
-</header>
-
-<section id="inicio" class="hero">
-
-<h1>
-
-🔥 Productos virales
-y top ventas
-
-</h1>
-
-<p>
-
-Miles de personas compran estas tendencias cada día
-
-</p>
-
-</section>
-<section id="flash" class="section">
-
-<div class="title">
-⚡ Ofertas Flash
-</div>
-
-<div id="flashGrid" class="grid"></div>
-
-</section>
-
-
-<section id="viral" class="section">
-
-<div class="title">
-📈 Tendencias TikTok
-</div>
-
-<div id="viralGrid" class="grid"></div>
-
-</section>
-
-
-<section id="catalogo" class="section">
-
-<div class="title">
-🛍 Catálogo completo
-</div>
-
-<div id="grid" class="grid"></div>
-
-</section>
-
-
-<div id="panelCarrito"
-
-style="
-position:fixed;
-top:0;
-right:-420px;
-width:420px;
-height:100%;
-background:#0b0f15;
-padding:25px;
-transition:.4s;
-z-index:99999;
-border-left:1px solid #1f2937">
-
-<h2 style="
-font-size:30px;
-color:#8b5cf6">
-
-🛒 Tu carrito
-
-</h2>
-
-<div id="items"
-
-style="
-margin-top:20px;
-max-height:50vh;
-overflow:auto">
-
-</div>
-
-<h3 style="
-margin-top:25px">
-
-Total:
-
-<span id="totalText">
-
-0€
-
-</span>
-
-</h3>
-
-<div
-id="paypal-button-container"
-style="margin-top:20px"></div>
-
-<button
-onclick="cerrarCarrito()"
-class="btn"
-style="margin-top:20px">
-
-Cerrar
-
-</button>
-
-</div>
-<script>
-
-let carrito=[]
-
-let total=0
-
-
-const productos=[
-
-{
-n:"Apple Watch Series 10",
-c:"Tecnología",
-img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=900",
-precio:499,
-tipo:"viral"
-},
-
-{
-n:"DJI Mini Pro",
-c:"Drones",
-img:"https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=900",
-precio:799,
-tipo:"flash"
-},
-
-{
-n:"Dyson V15 Detect",
-c:"Hogar",
-img:"https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=900",
-precio:649,
-tipo:"normal"
-},
-
-{
-n:"Nintendo Switch OLED",
-c:"Gaming",
-img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=900",
-precio:329,
-tipo:"viral"
-},
-
-{
-n:"JBL Tune 770BT",
-c:"Audio",
-img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900",
-precio:89,
-tipo:"normal"
-},
-
-{
-n:"GoPro HERO",
-c:"Viaje",
-img:"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=900",
-precio:449,
-tipo:"flash"
-},
-
-{
-n:"Kindle Paperwhite",
-c:"Tecnología",
-img:"https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=900",
-precio:169,
-tipo:"normal"
-},
-
-{
-n:"Magcubic HY300 Mini Proyector",
-c:"TikTok",
-img:"https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=900",
-precio:79,
-tipo:"viral"
-},
-
-{
-n:"Stanley Quencher",
-c:"TikTok",
-img:"https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=900",
-precio:45,
-tipo:"normal"
-},
-
-{
-n:"Logitech MX Master 3S",
-c:"Oficina",
-img:"https://images.unsplash.com/photo-1527814050087-3793815479db?q=80&w=900",
-precio:109,
-tipo:"normal"
-}
-
-]
-  function card(p){
-
-return `
-
-<div class="card">
-
-<img
-loading="lazy"
-src="${p.img}"
-alt="${p.n}">
-
-<div class="info">
-
-<div style="
-color:#8b5cf6;
-font-size:13px;
-margin-bottom:8px">
-
-${p.c}
-
-</div>
-
-<h3 style="
-font-size:18px;
-min-height:55px">
-
-${p.n}
-
-</h3>
-
-<div class="price">
-
-${p.precio}€
-
-</div>
-
-<button
-class="btn"
-onclick='comprar(${JSON.stringify({
-n:"${p.n}",
-precio:p.precio
-}).replace(/"/g,"&quot;")})'>
-
-Añadir al carrito
-
-</button>
-
-</div>
-
-</div>
-
-`
-
-}
-
-
-function render(lista){
-
-document
-.getElementById("grid")
-.innerHTML=
-
-lista
-.map(card)
-.join("")
-
-}
-
-
-render(productos)
-
-
-document
-.getElementById("flashGrid")
-.innerHTML=
-
-productos
-
-.filter(
-x=>x.tipo==="flash"
-)
-
-.map(card)
-
-.join("")
-
-
-document
-.getElementById("viralGrid")
-.innerHTML=
-
-productos
-
-.filter(
-x=>x.tipo==="viral"
-)
-
-.map(card)
-
-.join("")
-
-
-function comprar(p){
-
-carrito.push(p)
-
-total+=p.precio
-
-
-document
-.getElementById("count")
-.innerText=
-
-carrito.length
-
-
-document
-.getElementById("items")
-.innerHTML+=`
-
-<div style="
-padding:10px;
-border-bottom:
-1px solid #1f2937">
-
-${p.n}
-
--
-
-${p.precio}€
-
-</div>
-
-`
-
-
-document
-.getElementById("totalText")
-.innerText=
-
-total.toFixed(2)+"€"
-
-
-document
-.getElementById("panelCarrito")
-.style.right="0"
-
-}
-
-
-document
-.querySelector(".cart")
-.onclick=function(){
-
-document
-.getElementById("panelCarrito")
-.style.right="0"
-
-}
-
-
-function cerrarCarrito(){
-
-document
-.getElementById("panelCarrito")
-.style.right="-420px"
-
-}
-
-
-document
-.getElementById("search")
-.addEventListener(
-
-"input",
-
-function(e){
-
-let texto=
-
-e.target
-.value
-.toLowerCase()
-.trim()
-
-
-let filtrados=
-
-productos.filter(p=>
-
-p.n
-.toLowerCase()
-.includes(texto)
-
-||
-
-p.c
-.toLowerCase()
-.includes(texto)
-
-)
-
-
-render(filtrados)
-
-}
-
-)
-
-
-paypal.Buttons({
-
-createOrder:function(data,actions){
-
-return actions.order.create({
-
-purchase_units:[{
-
-amount:{
-
-value:
-total.toFixed(2)
-
-}
-
-}]
-
-})
-
-},
-
-onApprove:function(data,actions){
-
-return actions
-.order
-.capture()
-.then(function(details){
-
-alert(
-
-"Pago completado por "
-
-+
-
-details.payer
-.name
-.given_name
-
-)
-
-})
-
-}
-
-})
-
-.render(
-"#paypal-button-container"
-)
-
+    <header>
+        <div class="text-3xl font-black text-purple-500">TITANBYTE</div>
+        <input id="search" placeholder="Buscar entre 100+ productos..." class="bg-gray-800 p-2 rounded-lg w-1/3">
+        <div onclick="document.getElementById('panelCarrito').style.right='0'" class="cursor-pointer">🛒 <span id="count">0</span></div>
+    </header>
+
+    <div id="grid" class="grid"></div>
+
+    <div id="panelCarrito">
+        <h2 class="text-2xl text-purple-500">Carrito</h2>
+        <div id="items" class="mt-5"></div>
+        <h3 class="mt-5">Total: <span id="totalText">0€</span></h3>
+        <div id="paypal-button-container" class="mt-5"></div>
+        <button onclick="document.getElementById('panelCarrito').style.right='-450px'" class="btn mt-4 bg-gray-700">Cerrar</button>
+    </div>
+    <script>
+    // 1. Generador de 100 Productos
+    const productos = Array.from({length: 100}, (_, i) => ({
+        id: i,
+        n: `Hardware Pro ${i + 1}`,
+        c: i % 2 === 0 ? "Gaming" : "Oficina",
+        precio: Math.floor(Math.random() * 800) + 50,
+        stock: Math.floor(Math.random() * 20) + 1,
+        img: `https://picsum.photos/seed/${i}/400/300`, // Imágenes automáticas
+        tipo: i % 10 === 0 ? "viral" : "normal"
+    }));
+
+    let carrito = JSON.parse(localStorage.getItem('titanByteCart')) || [];
+
+    // 2. Renderizado de Productos
+    const render = (lista) => {
+        document.getElementById("grid").innerHTML = lista.map(p => `
+            <div class="card ${p.stock <= 0 ? 'opacity-50' : ''}">
+                <img loading="lazy" src="${p.img}" class="rounded-lg mb-3">
+                <h3 class="font-bold">${p.n}</h3>
+                <p class="text-purple-500 font-black text-xl">${p.precio}€</p>
+                <p class="text-gray-400 text-sm mb-3">${p.stock > 0 ? 'Stock: '+p.stock : 'Agotado'}</p>
+                <button class="btn" ${p.stock <= 0 ? 'disabled' : ''} onclick='comprar(${JSON.stringify(p).replace(/"/g, "&quot;")})'>
+                    ${p.stock > 0 ? 'Añadir a la Build' : 'Sin Stock'}
+                </button>
+            </div>
+        `).join("");
+    };
+
+    // 3. Lógica de Compra y Carrito
+    const comprar = (p) => {
+        let prod = productos.find(x => x.id === p.id);
+        if (prod.stock > 0) {
+            prod.stock--;
+            carrito.push(prod);
+            localStorage.setItem('titanByteCart', JSON.stringify(carrito));
+            actualizarUI();
+            render(productos);
+        }
+    };
+
+    const actualizarUI = () => {
+        document.getElementById("count").innerText = carrito.length;
+        document.getElementById("totalText").innerText = carrito.reduce((a, b) => a + b.precio, 0) + "€";
+        document.getElementById("items").innerHTML = carrito.map(p => `<div class="border-b border-gray-800 p-2">${p.n} - ${p.precio}€</div>`).join("");
+    };
+
+    // 4. Buscador
+    document.getElementById("search").addEventListener("input", (e) => {
+        const busqueda = e.target.value.toLowerCase();
+        render(productos.filter(p => p.n.toLowerCase().includes(busqueda)));
+    });
+
+    // PayPal
+    paypal.Buttons({
+        createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: carrito.reduce((a, b) => a + b.precio, 0).toFixed(2) } }] }),
+        onApprove: (data, actions) => actions.order.capture().then(() => alert("Compra TitanByte realizada"))
+    }).render("#paypal-button-container");
+
+    // Inicialización
+    render(productos);
+    actualizarUI();
 </script>
-
-</div>
-</div>
-
-</body>
-</html>
