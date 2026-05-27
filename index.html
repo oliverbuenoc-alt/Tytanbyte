@@ -1,55 +1,42 @@
+# TITANBYTE PRO — PARTE 1
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TitanByte Pro · Hardware Gaming & Componentes PC</title>
+<title>TitanByte Pro | Hardware Gaming Premium</title>
 
-<meta name="description" content="Hardware gaming premium. RTX 5090, Ryzen 9, SSD NVMe y PCs Gaming.">
+<meta name="description" content="Tienda gaming premium en España. RTX 5090, Ryzen 9, SSD NVMe y PCs gaming.">
 
-<!-- OPEN GRAPH -->
-<meta property="og:title" content="TitanByte Pro">
-<meta property="og:description" content="Hardware Gaming Premium">
-<meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80">
-<meta property="og:type" content="website">
-
-<!-- FAVICON -->
-<link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-<text y='.9em' font-size='90'>⚡</text>
-</svg>">
-
-<!-- TAILWIND -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 
-<!-- PAYPAL -->
+<script src="https://cdn.tailwindcss.com"></script>
+
 <script src="https://www.paypal.com/sdk/js?client-id=AQ0-loNUSHmKJ0yAqvJaGxQj8bvMpKc4_cAzd2rLPURK0VPhIpvp-fsAU5xAOawA9zYKEJmdOukeikNi&currency=EUR"></script>
 
 <script>
 tailwind.config = {
-theme: {
-extend: {
-colors: {
-brand: {
-500: '#f97316',
-600: '#ea580c'
-},
-surface: {
-900: '#030507',
-800: '#0a0d12',
-700: '#0f1419'
-}
-}
-}
-}
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          500: '#f97316',
+          600: '#ea580c'
+        },
+        surface: {
+          900: '#030507',
+          800: '#0a0d12',
+          700: '#0f1419'
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -59,6 +46,10 @@ surface: {
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -72,11 +63,52 @@ overflow-x:hidden;
 font-family:'Orbitron',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
+.glass{
+background:rgba(15,20,25,0.75);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,0.05);
 }
 
-/* SCROLLBAR */
+.btn-primary{
+background:linear-gradient(135deg,#f97316,#ea580c);
+transition:0.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(249,115,22,0.35);
+}
+
+.product-card{
+background:#0f1419;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+overflow:hidden;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+border-color:#f97316;
+box-shadow:0 20px 50px rgba(0,0,0,0.45);
+}
+
+.product-card img{
+transition:0.5s;
+}
+
+.product-card:hover img{
+transform:scale(1.06);
+}
+
+.search-input{
+background:#111827;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.search-input:focus{
+outline:none;
+border-color:#f97316;
+}
 
 ::-webkit-scrollbar{
 width:8px;
@@ -91,83 +123,17 @@ background:#f97316;
 border-radius:20px;
 }
 
-/* GLASS */
-
-.glass{
-background:rgba(15,20,25,0.8);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.05);
-}
-
-/* BOTONES */
-
-.btn-primary{
-background:linear-gradient(135deg,#f97316,#ea580c);
-transition:0.3s;
-}
-
-.btn-primary:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(249,115,22,0.4);
-}
-
-/* PRODUCTOS */
-
-.product-card{
-background:#0f1419;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.4s;
-overflow:hidden;
-}
-
-.product-card:hover{
-transform:translateY(-8px);
-border-color:#f97316;
-}
-
-/* HERO */
-
 .hero-overlay{
-background:
-linear-gradient(to top,#030507 0%,rgba(3,5,7,0.8) 40%,rgba(3,5,7,0.3) 100%);
+background:linear-gradient(to top,#030507 0%,rgba(3,5,7,0.7) 50%,rgba(3,5,7,0.2) 100%);
 }
-
-/* INPUT */
-
-.search-input{
-background:#111827;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.search-input:focus{
-outline:none;
-border-color:#f97316;
-}
-
-/* MOBILE FIX */
 
 @media(max-width:1024px){
-
 .sidebar-desktop{
 display:none;
 }
-
-.mobile-header{
-display:flex;
-}
-
 main{
 padding-top:90px;
 }
-
-}
-
-@media(min-width:1025px){
-
-.mobile-header{
-display:none;
-}
-
 }
 
 </style>
@@ -177,17 +143,16 @@ display:none;
 
 <!-- TOP BAR -->
 
-<div class="bg-orange-600 text-center py-2 text-sm font-bold">
-🔥 OFERTAS FLASH · Código TITAN30 = -30€
+<div class="bg-orange-600 py-3 text-center text-sm font-bold tracking-wide">
+🔥 OFERTAS FLASH · ENVÍO GRATIS 24-48H · CUPÓN TITAN30
 </div>
 
-<!-- MOBILE HEADER -->
+<!-- HEADER MOBILE -->
 
-<header class="mobile-header fixed top-0 left-0 w-full z-50 glass px-4 py-4 items-center justify-between">
+<header class="fixed top-0 left-0 w-full z-50 glass px-5 py-4 flex lg:hidden items-center justify-between">
 
 <div class="flex items-center gap-3">
-
-<div class="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-xl">
+<div class="w-11 h-11 rounded-2xl bg-orange-500 flex items-center justify-center text-xl">
 ⚡
 </div>
 
@@ -196,11 +161,9 @@ display:none;
 TITAN<span class="text-orange-500">BYTE</span>
 </h1>
 </div>
-
 </div>
 
-<button onclick="openCart()"
-class="btn-primary px-4 py-2 rounded-xl font-bold">
+<button onclick="openCart()" class="btn-primary px-5 py-2 rounded-xl font-bold">
 🛒 <span id="cart-count-mobile">0</span>
 </button>
 
@@ -210,50 +173,40 @@ class="btn-primary px-4 py-2 rounded-xl font-bold">
 
 <!-- SIDEBAR -->
 
-<aside class="sidebar-desktop w-72 min-h-screen sticky top-0 glass p-6">
+<aside class="sidebar-desktop w-72 min-h-screen sticky top-0 glass p-6 hidden lg:block">
 
-<div class="flex items-center gap-3 mb-10">
-
-<div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-2xl">
+<div class="flex items-center gap-4 mb-12">
+<div class="w-14 h-14 rounded-2xl bg-orange-500 flex items-center justify-center text-2xl">
 ⚡
 </div>
 
 <div>
-<h1 class="font-display text-2xl font-black">
+<h1 class="font-display text-3xl font-black">
 TITAN<span class="text-orange-500">BYTE</span>
 </h1>
 
-<p class="text-xs text-gray-400">
-Premium Hardware
+<p class="text-gray-400 text-sm">
+Hardware Premium
 </p>
-
+</div>
 </div>
 
-</div>
-
-<nav class="space-y-3">
-
-<a href="#ofertas" class="block text-gray-300 hover:text-white">
-🔥 Ofertas
-</a>
-
-<a href="#gpu" class="block text-gray-300 hover:text-white">
-🎮 GPUs
-</a>
-
-<a href="#cpu" class="block text-gray-300 hover:text-white">
-🧠 Procesadores
-</a>
-
-<a href="#ssd" class="block text-gray-300 hover:text-white">
-💾 SSDs
-</a>
-
-<a href="#configurador" class="block text-gray-300 hover:text-white">
-🛠️ Configurador
-</a>
-
+<nav class="space-y-3 text-gray-300">
+<a href="#gpu" class="block hover:text-white transition">🎮 Tarjetas Gráficas</a>
+<a href="#cpu" class="block hover:text-white transition">🧠 Procesadores</a>
+<a href="#ssd" class="block hover:text-white transition">💾 SSD NVMe</a>
+<a href="#fuentes" class="block hover:text-white transition">⚡ Fuentes</a>
+<a href="#monitores" class="block hover:text-white transition">🖥️ Monitores</a>
+<a href="#streaming" class="block hover:text-white transition">🎙️ Streaming</a>
+<a href="#refrigeracion" class="block hover:text-white transition">❄️ Refrigeración</a>
+<a href="#configurador" class="block hover:text-white transition">🛠️ Configurador</a>
 </nav>
+
+<div class="mt-12">
+<button onclick="openCart()" class="btn-primary w-full py-4 rounded-2xl font-bold">
+🛒 Ver carrito
+</button>
+</div>
 
 </aside>
 
@@ -263,49 +216,38 @@ Premium Hardware
 
 <!-- HERO -->
 
-<section class="relative h-[500px]">
+<section class="relative h-[650px] overflow-hidden">
 
-<img
-src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80"
-class="absolute inset-0 w-full h-full object-cover"
->
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80"
+class="absolute inset-0 w-full h-full object-cover">
 
 <div class="absolute inset-0 hero-overlay"></div>
 
-<div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-end pb-20">
+<div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex items-end pb-20">
 
 <div class="max-w-2xl">
 
-<div class="inline-block bg-red-500/20 border border-red-500/30 text-red-400 px-4 py-2 rounded-full text-sm mb-6">
+<div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/30 px-4 py-2 rounded-full text-red-400 text-sm font-bold mb-6">
 🔥 STOCK EN TIEMPO REAL
 </div>
 
-<h2 class="font-display text-5xl lg:text-7xl font-black leading-tight mb-6">
-
-HARDWARE<br>
-
-<span class="text-orange-500">
-GAMING
-</span>
-
+<h2 class="font-display text-6xl lg:text-8xl font-black leading-none mb-6">
+HARDWARE
+<span class="text-orange-500 block">GAMING</span>
 </h2>
 
-<p class="text-gray-300 text-lg mb-8">
-RTX 5090, Ryzen 9000 y SSD PCIe 5.0 con envío 24-48h.
+<p class="text-xl text-gray-300 mb-8 max-w-xl">
+RTX 5090, Ryzen 9, SSD PCIe 5.0 y setups gaming premium con envío rápido en toda España.
 </p>
 
 <div class="flex flex-wrap gap-4">
-
-<a href="#ofertas"
-class="btn-primary px-8 py-4 rounded-2xl font-bold">
-Ver Ofertas
+<a href="#productos" class="btn-primary px-8 py-4 rounded-2xl font-bold text-lg">
+Ver productos
 </a>
 
-<a href="#configurador"
-class="border border-white/10 bg-white/5 px-8 py-4 rounded-2xl font-bold hover:bg-white/10 transition">
-Configurar PC
+<a href="#configurador" class="bg-white/10 border border-white/10 hover:bg-white/15 transition px-8 py-4 rounded-2xl font-bold text-lg">
+Montar mi PC
 </a>
-
 </div>
 
 </div>
@@ -313,131 +255,145 @@ Configurar PC
 </div>
 
 </section>
-  <!-- CONTENIDO -->
-
-<section class="max-w-7xl mx-auto px-6 py-16">
 
 <!-- BUSCADOR -->
 
-<div class="mb-10">
+<section class="max-w-7xl mx-auto px-6 py-14">
 
-<div class="relative max-w-2xl">
-
-<input
-type="text"
+<div class="relative max-w-2xl mx-auto">
+<input type="text"
 id="buscador"
-placeholder="Buscar hardware gaming..."
-class="search-input w-full px-6 py-4 rounded-2xl text-white"
-onkeyup="filterProducts()"
->
-
+placeholder="Buscar RTX, Ryzen, SSDs, monitores..."
+class="search-input w-full px-6 py-5 rounded-2xl text-lg text-white"
+onkeyup="filterProducts()">
 </div>
 
-</div>
+</section>
 
 <!-- FILTROS -->
 
-<div class="flex flex-wrap gap-3 mb-12">
+<section class="max-w-7xl mx-auto px-6 pb-12">
 
-<button onclick="filterCategory('all')"
-class="filter-btn btn-primary px-5 py-2 rounded-full font-bold">
+<div class="flex flex-wrap gap-3 justify-center">
+
+<button onclick="filterCategory('all')" class="btn-primary px-5 py-3 rounded-full font-bold">
 Todos
 </button>
 
-<button onclick="filterCategory('gpu')"
-class="filter-btn bg-white/5 px-5 py-2 rounded-full">
+<button onclick="filterCategory('gpu')" class="bg-white/5 hover:bg-white/10 transition px-5 py-3 rounded-full">
 GPUs
 </button>
 
-<button onclick="filterCategory('cpu')"
-class="filter-btn bg-white/5 px-5 py-2 rounded-full">
+<button onclick="filterCategory('cpu')" class="bg-white/5 hover:bg-white/10 transition px-5 py-3 rounded-full">
 CPUs
 </button>
 
-<button onclick="filterCategory('ssd')"
-class="filter-btn bg-white/5 px-5 py-2 rounded-full">
-SSDs
+<button onclick="filterCategory('ssd')" class="bg-white/5 hover:bg-white/10 transition px-5 py-3 rounded-full">
+SSD
 </button>
 
-<button onclick="filterCategory('pc')"
-class="filter-btn bg-white/5 px-5 py-2 rounded-full">
-PC Gaming
+<button onclick="filterCategory('monitor')" class="bg-white/5 hover:bg-white/10 transition px-5 py-3 rounded-full">
+Monitores
+</button>
+
+<button onclick="filterCategory('fuente')" class="bg-white/5 hover:bg-white/10 transition px-5 py-3 rounded-full">
+Fuentes
+</button>
+
+<button onclick="filterCategory('streaming')" class="bg-white/5 hover:bg-white/10 transition px-5 py-3 rounded-full">
+Streaming
 </button>
 
 </div>
 
-<!-- GRID PRODUCTOS -->
+</section>
 
-<div id="products-grid"
-class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- PRODUCTOS -->
 
-<!-- PRODUCTO -->
+<section id="productos" class="max-w-7xl mx-auto px-6 pb-20">
 
-<div class="product-card rounded-3xl p-5"
-data-category="gpu">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
 
-<img
-src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=900&q=80"
-class="w-full h-64 object-cover rounded-2xl mb-5"
->
+<!-- RTX 5090 -->
+<div class="product-card rounded-3xl p-5" data-category="gpu">
+<img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5">
 
-<div class="flex items-center justify-between mb-3">
-
-<span class="text-xs bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full">
+<div class="flex items-center justify-between mb-4">
+<span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">
 NVIDIA
 </span>
-
-<span class="text-green-400 text-sm">
-✓ Stock
-</span>
-
+<span class="text-sm text-orange-400 font-bold">TOP VENTAS</span>
 </div>
 
-<h3 class="text-2xl font-bold mb-2">
-RTX 5090 24GB
-</h3>
-
-<p class="text-gray-400 mb-5">
-Rendimiento extremo para gaming 4K y IA.
-</p>
+<h3 class="text-2xl font-black mb-2">RTX 5090 24GB</h3>
+<p class="text-gray-400 mb-5">Gaming extremo 4K + IA avanzada.</p>
 
 <div class="flex items-center justify-between">
-
 <div>
-
-<p class="text-3xl font-black text-orange-500">
-2499€
-</p>
-
-<p class="text-sm text-gray-500 line-through">
-2699€
-</p>
-
+<p class="text-3xl font-black text-orange-500">2499€</p>
+<p class="text-sm text-gray-500 line-through">2699€</p>
 </div>
 
-<button
-onclick="addToCart('RTX 5090 24GB',2499)"
+<button onclick="addToCart('RTX 5090 24GB',2499)"
 class="btn-primary px-5 py-3 rounded-xl font-bold">
 Añadir
 </button>
-
+</div>
 </div>
 
+<!-- RTX 5080 -->
+<div class="product-card rounded-3xl p-5" data-category="gpu">
+<img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5">
+
+<div class="flex items-center justify-between mb-4">
+<span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">
+NVIDIA
+</span>
+<span class="text-sm text-green-400 font-bold">EN STOCK</span>
 </div>
 
-<!-- PRODUCTO -->
+<h3 class="text-2xl font-black mb-2">RTX 5080 16GB</h3>
+<p class="text-gray-400 mb-5">Ray tracing ultra rendimiento.</p>
+
+<div class="flex items-center justify-between">
+<div>
+<p class="text-3xl font-black text-orange-500">1299€</p>
+</div>
+
+<button onclick="addToCart('RTX 5080 16GB',1299)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+</div>
+</div>
+
+```
+<!-- AMD + INTEL + SSD -->
+
+<section class="max-w-7xl mx-auto px-6 py-16">
+
+<h2 id="cpu"
+class="font-display text-5xl font-black mb-12">
+🧠 PROCESADORES PREMIUM
+</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+
+<!-- RYZEN -->
 
 <div class="product-card rounded-3xl p-5"
 data-category="cpu">
 
 <img
 src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
-class="w-full h-64 object-cover rounded-2xl mb-5"
+class="w-full h-56 object-cover rounded-2xl mb-5"
 >
 
-<div class="flex items-center justify-between mb-3">
+<div class="flex items-center justify-between mb-4">
 
-<span class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded-full">
+<span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">
 AMD
 </span>
 
@@ -447,22 +403,20 @@ AMD
 
 </div>
 
-<h3 class="text-2xl font-bold mb-2">
+<h3 class="text-2xl font-black mb-2">
 Ryzen 9 9950X3D
 </h3>
 
 <p class="text-gray-400 mb-5">
-Procesador gaming ultra premium.
+El mejor CPU gaming del mercado.
 </p>
 
 <div class="flex items-center justify-between">
 
 <div>
-
 <p class="text-3xl font-black text-orange-500">
 999€
 </p>
-
 </div>
 
 <button
@@ -475,20 +429,68 @@ Añadir
 
 </div>
 
-<!-- PRODUCTO -->
+<!-- RYZEN -->
 
 <div class="product-card rounded-3xl p-5"
-data-category="ssd">
+data-category="cpu">
 
 <img
 src="https://images.unsplash.com/photo-1591799265444-d66432b91588?auto=format&fit=crop&w=900&q=80"
-class="w-full h-64 object-cover rounded-2xl mb-5"
+class="w-full h-56 object-cover rounded-2xl mb-5"
 >
 
-<div class="flex items-center justify-between mb-3">
+<div class="flex items-center justify-between mb-4">
 
-<span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">
-SSD
+<span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">
+AMD
+</span>
+
+<span class="text-orange-400 text-sm">
+TOP
+</span>
+
+</div>
+
+<h3 class="text-2xl font-black mb-2">
+Ryzen 7 9800X3D
+</h3>
+
+<p class="text-gray-400 mb-5">
+FPS extremos competitivos.
+</p>
+
+<div class="flex items-center justify-between">
+
+<div>
+<p class="text-3xl font-black text-orange-500">
+549€
+</p>
+</div>
+
+<button
+onclick="addToCart('Ryzen 7 9800X3D',549)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<!-- INTEL -->
+
+<div class="product-card rounded-3xl p-5"
+data-category="cpu">
+
+<img
+src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<div class="flex items-center justify-between mb-4">
+
+<span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">
+INTEL
 </span>
 
 <span class="text-green-400 text-sm">
@@ -497,26 +499,72 @@ SSD
 
 </div>
 
-<h3 class="text-2xl font-bold mb-2">
-Samsung 990 PRO 4TB
+<h3 class="text-2xl font-black mb-2">
+Intel i9 14900KS
 </h3>
 
 <p class="text-gray-400 mb-5">
-Velocidad PCIe 5.0 extrema.
+Procesador gaming extremo.
 </p>
 
 <div class="flex items-center justify-between">
 
 <div>
-
 <p class="text-3xl font-black text-orange-500">
-399€
+799€
 </p>
-
 </div>
 
 <button
-onclick="addToCart('Samsung 990 PRO 4TB',399)"
+onclick="addToCart('Intel i9 14900KS',799)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<!-- INTEL -->
+
+<div class="product-card rounded-3xl p-5"
+data-category="cpu">
+
+<img
+src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<div class="flex items-center justify-between mb-4">
+
+<span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">
+INTEL
+</span>
+
+<span class="text-green-400 text-sm">
+✓ Nuevo
+</span>
+
+</div>
+
+<h3 class="text-2xl font-black mb-2">
+Intel Ultra 9 285K
+</h3>
+
+<p class="text-gray-400 mb-5">
+IA + Gaming generación nueva.
+</p>
+
+<div class="flex items-center justify-between">
+
+<div>
+<p class="text-3xl font-black text-orange-500">
+899€
+</p>
+</div>
+
+<button
+onclick="addToCart('Intel Ultra 9 285K',899)"
 class="btn-primary px-5 py-3 rounded-xl font-bold">
 Añadir
 </button>
@@ -529,42 +577,142 @@ Añadir
 
 </section>
 
-<!-- CONFIGURADOR -->
+<!-- SSD -->
 
-<section id="configurador"
-class="max-w-5xl mx-auto px-6 py-16">
+<section id="ssd"
+class="max-w-7xl mx-auto px-6 py-16">
 
-<div class="glass rounded-3xl p-8">
-
-<h2 class="font-display text-4xl font-black mb-6">
-🛠️ CONFIGURA TU PC
+<h2 class="font-display text-5xl font-black mb-12">
+💾 SSD NVMe
 </h2>
 
-<div class="grid md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
 
-<select
-id="component-select"
-class="bg-surface-700 border border-white/10 rounded-2xl p-4">
+<div class="product-card rounded-3xl p-5"
+data-category="ssd">
 
-<option value="RTX 5090,2499">
-RTX 5090 — 2499€
-</option>
+<img
+src="https://images.unsplash.com/photo-1591799265444-d66432b91588?auto=format&fit=crop&w=900&q=80"
+class="w-full h-52 object-cover rounded-2xl mb-5"
+>
 
-<option value="Ryzen 9 9950X3D,999">
-Ryzen 9 9950X3D — 999€
-</option>
+<h3 class="text-2xl font-black mb-2">
+Samsung 990 PRO 4TB
+</h3>
 
-<option value="Samsung 990 PRO 4TB,399">
-Samsung 990 PRO 4TB — 399€
-</option>
+<p class="text-gray-400 mb-5">
+Velocidad extrema PCIe 5.0
+</p>
 
-</select>
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+399€
+</p>
 
 <button
-onclick="addCustomComponent()"
-class="btn-primary rounded-2xl font-bold py-4">
-Añadir al carrito
+onclick="addToCart('Samsung 990 PRO 4TB',399)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
 </button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5"
+data-category="ssd">
+
+<img
+src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?auto=format&fit=crop&w=900&q=80"
+class="w-full h-52 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+WD Black SN850X
+</h3>
+
+<p class="text-gray-400 mb-5">
+Gaming SSD ultra rápido
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+249€
+</p>
+
+<button
+onclick="addToCart('WD Black SN850X',249)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5"
+data-category="ssd">
+
+<img
+src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=900&q=80"
+class="w-full h-52 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Crucial T700
+</h3>
+
+<p class="text-gray-400 mb-5">
+PCIe Gen5 extremo
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+319€
+</p>
+
+<button
+onclick="addToCart('Crucial T700',319)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5"
+data-category="ssd">
+
+<img
+src="https://images.unsplash.com/photo-1593640408182-31c228c1baca?auto=format&fit=crop&w=900&q=80"
+class="w-full h-52 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Kingston Fury Renegade
+</h3>
+
+<p class="text-gray-400 mb-5">
+SSD gaming premium
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+279€
+</p>
+
+<button
+onclick="addToCart('Kingston Fury Renegade',279)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
 
 </div>
 
@@ -572,63 +720,577 @@ Añadir al carrito
 
 </section>
 
-<!-- CARRITO -->
+<!-- FUENTES -->
 
-<div
-id="cart-modal"
-class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-6">
+<section id="fuentes"
+class="max-w-7xl mx-auto px-6 py-16">
 
-<div class="bg-surface-800 rounded-3xl w-full max-w-2xl p-8">
-
-<div class="flex items-center justify-between mb-6">
-
-<h2 class="text-3xl font-black">
-🛒 Tu carrito
+<h2 class="font-display text-5xl font-black mb-12">
+⚡ FUENTES DE ALIMENTACIÓN
 </h2>
 
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+
+<div class="product-card rounded-3xl p-5"
+data-category="fuente">
+
+<img
+src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Corsair RM1000x
+</h3>
+
+<p class="text-gray-400 mb-5">
+1000W Full Modular Gold
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+249€
+</p>
+
 <button
-onclick="closeCart()"
-class="text-2xl">
-✕
+onclick="addToCart('Corsair RM1000x',249)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
 </button>
 
 </div>
 
-<div id="cart-items"
-class="space-y-4 mb-6 max-h-96 overflow-y-auto">
 </div>
 
-<div class="border-t border-white/10 pt-6">
+<div class="product-card rounded-3xl p-5"
+data-category="fuente">
 
-<div class="flex justify-between text-2xl font-black mb-6">
+<img
+src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
 
-<span>Total:</span>
+<h3 class="text-2xl font-black mb-2">
+ASUS Thor 1200W
+</h3>
 
-<span id="cart-total">
-0€
+<p class="text-gray-400 mb-5">
+Fuente premium OLED
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+399€
+</p>
+
+<button
+onclick="addToCart('ASUS Thor 1200W',399)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5"
+data-category="fuente">
+
+<img
+src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+MSI MPG 850W
+</h3>
+
+<p class="text-gray-400 mb-5">
+ATX 3.0 PCIe 5
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+199€
+</p>
+
+<button
+onclick="addToCart('MSI MPG 850W',199)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- MONITORES -->
+
+<section id="monitores"
+class="max-w-7xl mx-auto px-6 py-16">
+
+<h2 class="font-display text-5xl font-black mb-12">
+🖥️ MONITORES GAMING
+</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+
+<!-- MONITOR -->
+
+<div class="product-card rounded-3xl p-5"
+data-category="monitor">
+
+<img
+src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<div class="flex items-center justify-between mb-4">
+
+<span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">
+240Hz
+</span>
+
+<span class="text-green-400 text-sm">
+✓ Stock
 </span>
 
 </div>
 
-<div id="paypal-button-container"></div>
+<h3 class="text-2xl font-black mb-2">
+ASUS ROG Swift 27”
+</h3>
+
+<p class="text-gray-400 mb-5">
+QHD 240Hz competitivo.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+599€
+</p>
+
+<button
+onclick="addToCart('ASUS ROG Swift',599)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<!-- MONITOR -->
+
+<div class="product-card rounded-3xl p-5"
+data-category="monitor">
+
+<img
+src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<div class="flex items-center justify-between mb-4">
+
+<span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">
+OLED
+</span>
+
+<span class="text-orange-400 text-sm">
+TOP
+</span>
+
+</div>
+
+<h3 class="text-2xl font-black mb-2">
+Samsung OLED G9
+</h3>
+
+<p class="text-gray-400 mb-5">
+49” UltraWide premium.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+1399€
+</p>
+
+<button
+onclick="addToCart('Samsung OLED G9',1399)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<!-- MONITOR -->
+
+<div class="product-card rounded-3xl p-5"
+data-category="monitor">
+
+<img
+src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<div class="flex items-center justify-between mb-4">
+
+<span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">
+4K
+</span>
+
+<span class="text-green-400 text-sm">
+✓ Nuevo
+</span>
+
+</div>
+
+<h3 class="text-2xl font-black mb-2">
+LG UltraGear 32”
+</h3>
+
+<p class="text-gray-400 mb-5">
+4K NanoIPS 144Hz.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+899€
+</p>
+
+<button
+onclick="addToCart('LG UltraGear 32',899)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<!-- MONITOR -->
+
+<div class="product-card rounded-3xl p-5"
+data-category="monitor">
+
+<img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<div class="flex items-center justify-between mb-4">
+
+<span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">
+165Hz
+</span>
+
+<span class="text-green-400 text-sm">
+✓ Oferta
+</span>
+
+</div>
+
+<h3 class="text-2xl font-black mb-2">
+MSI MAG 27”
+</h3>
+
+<p class="text-gray-400 mb-5">
+Gaming QHD ultra fluido.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+349€
+</p>
+
+<button
+onclick="addToCart('MSI MAG 27',349)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
 
 </div>
 
 </div>
 
 </div>
+
+</section>
+
+<!-- STREAMING -->
+
+<section id="streaming"
+class="max-w-7xl mx-auto px-6 py-16">
+
+<h2 class="font-display text-5xl font-black mb-12">
+🎙️ STREAMING & SETUP
+</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+
+<div class="product-card rounded-3xl p-5"
+data-category="streaming">
+
+<img
+src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Elgato Stream Deck
+</h3>
+
+<p class="text-gray-400 mb-5">
+Control streaming profesional.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+149€
+</p>
+
+<button
+onclick="addToCart('Elgato Stream Deck',149)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5"
+data-category="streaming">
+
+<img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Blue Yeti X
+</h3>
+
+<p class="text-gray-400 mb-5">
+Micrófono premium USB.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+179€
+</p>
+
+<button
+onclick="addToCart('Blue Yeti X',179)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5"
+data-category="streaming">
+
+<img
+src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Logitech Brio 4K
+</h3>
+
+<p class="text-gray-400 mb-5">
+Webcam profesional streaming.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+229€
+</p>
+
+<button
+onclick="addToCart('Logitech Brio 4K',229)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5"
+data-category="streaming">
+
+<img
+src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+HyperX QuadCast S
+</h3>
+
+<p class="text-gray-400 mb-5">
+Micrófono RGB premium.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+169€
+</p>
+
+<button
+onclick="addToCart('HyperX QuadCast S',169)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REFRIGERACIÓN -->
+
+<section id="refrigeracion"
+class="max-w-7xl mx-auto px-6 py-16">
+
+<h2 class="font-display text-5xl font-black mb-12">
+❄️ REFRIGERACIÓN
+</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+
+<div class="product-card rounded-3xl p-5">
+
+<img
+src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+NZXT Kraken Elite
+</h3>
+
+<p class="text-gray-400 mb-5">
+Refrigeración líquida LCD.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+299€
+</p>
+
+<button
+onclick="addToCart('NZXT Kraken Elite',299)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5">
+
+<img
+src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Corsair iCUE H150i
+</h3>
+
+<p class="text-gray-400 mb-5">
+360mm RGB premium.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+249€
+</p>
+
+<button
+onclick="addToCart('Corsair iCUE H150i',249)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card rounded-3xl p-5">
+
+<img
+src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover rounded-2xl mb-5"
+>
+
+<h3 class="text-2xl font-black mb-2">
+Lian Li UNI FAN SL
+</h3>
+
+<p class="text-gray-400 mb-5">
+Ventiladores RGB premium.
+</p>
+
+<div class="flex items-center justify-between">
+
+<p class="text-3xl font-black text-orange-500">
+119€
+</p>
+
+<button
+onclick="addToCart('Lian Li UNI FAN SL',119)"
+class="btn-primary px-5 py-3 rounded-xl font-bold">
+Añadir
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- FOOTER -->
 
 <footer class="border-t border-white/5 mt-20">
 
-<div class="max-w-7xl mx-auto px-6 py-12">
+<div class="max-w-7xl mx-auto px-6 py-14">
 
 <div class="grid md:grid-cols-4 gap-10">
 
 <div>
 
-<h3 class="font-display text-2xl font-black mb-4">
+<h3 class="font-display text-3xl font-black mb-4">
 TITAN<span class="text-orange-500">BYTE</span>
 </h3>
 
@@ -646,10 +1308,10 @@ Categorías
 
 <ul class="space-y-2 text-gray-400">
 
-<li>GPUs</li>
+<li>Tarjetas gráficas</li>
 <li>Procesadores</li>
-<li>SSDs</li>
-<li>Gaming PCs</li>
+<li>Monitores</li>
+<li>Streaming</li>
 
 </ul>
 
@@ -658,7 +1320,7 @@ Categorías
 <div>
 
 <h4 class="font-bold mb-4">
-Ayuda
+Información
 </h4>
 
 <ul class="space-y-2 text-gray-400">
@@ -675,12 +1337,16 @@ Ayuda
 <div>
 
 <h4 class="font-bold mb-4">
-Pago Seguro
+Pago seguro
 </h4>
 
-<p class="text-gray-400">
+<p class="text-gray-400 mb-3">
 PayPal · Visa · Mastercard
 </p>
+
+<div class="flex gap-2 text-2xl">
+💳 🛡️ ⚡
+</div>
 
 </div>
 
@@ -696,6 +1362,53 @@ PayPal · Visa · Mastercard
 
 </footer>
 
+<!-- CARRITO -->
+
+<div
+id="cart-modal"
+class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-6">
+
+<div class="bg-surface-800 rounded-3xl w-full max-w-2xl p-8">
+
+<div class="flex items-center justify-between mb-8">
+
+<h2 class="text-3xl font-black">
+🛒 Tu carrito
+</h2>
+
+<button
+onclick="closeCart()"
+class="text-2xl">
+✕
+</button>
+
+</div>
+
+<div
+id="cart-items"
+class="space-y-4 mb-6 max-h-96 overflow-y-auto">
+</div>
+
+<div class="border-t border-white/10 pt-6">
+
+<div class="flex justify-between text-3xl font-black mb-6">
+
+<span>Total:</span>
+
+<span id="cart-total">
+0€
+</span>
+
+</div>
+
+<div id="paypal-button-container"></div>
+
+</div>
+
+</div>
+
+</div>
+
 <!-- JAVASCRIPT -->
 
 <script>
@@ -710,23 +1423,16 @@ updateCart();
 
 }
 
-function addCustomComponent(){
-
-const select = document.getElementById('component-select');
-
-const value = select.value.split(',');
-
-addToCart(value[0],parseInt(value[1]));
-
-}
-
 function updateCart(){
 
-const cartItems = document.getElementById('cart-items');
+const cartItems =
+document.getElementById('cart-items');
 
-const cartCount = document.getElementById('cart-count-mobile');
+const cartTotal =
+document.getElementById('cart-total');
 
-const cartTotal = document.getElementById('cart-total');
+const cartCount =
+document.getElementById('cart-count-mobile');
 
 cartItems.innerHTML = '';
 
@@ -760,9 +1466,8 @@ Eliminar
 
 });
 
-cartCount.innerText = cart.length;
-
 cartTotal.innerText = total + '€';
+cartCount.innerText = cart.length;
 
 }
 
@@ -776,31 +1481,42 @@ updateCart();
 
 function openCart(){
 
-document.getElementById('cart-modal').classList.remove('hidden');
+document
+.getElementById('cart-modal')
+.classList.remove('hidden');
 
-document.getElementById('cart-modal').classList.add('flex');
+document
+.getElementById('cart-modal')
+.classList.add('flex');
 
 }
 
 function closeCart(){
 
-document.getElementById('cart-modal').classList.add('hidden');
+document
+.getElementById('cart-modal')
+.classList.add('hidden');
 
-document.getElementById('cart-modal').classList.remove('flex');
+document
+.getElementById('cart-modal')
+.classList.remove('flex');
 
 }
 
 function filterProducts(){
 
 const input =
-document.getElementById('buscador').value.toLowerCase();
+document.getElementById('buscador')
+.value
+.toLowerCase();
 
 const cards =
 document.querySelectorAll('.product-card');
 
 cards.forEach(card=>{
 
-const text = card.innerText.toLowerCase();
+const text =
+card.innerText.toLowerCase();
 
 card.style.display =
 text.includes(input)
@@ -834,8 +1550,6 @@ card.dataset.category === category
 });
 
 }
-
-/* PAYPAL */
 
 paypal.Buttons({
 
@@ -879,6 +1593,9 @@ closeCart();
 
 </script>
 
+</main>
+
+</div>
+
 </body>
-</html>  
-    
+  </html>
